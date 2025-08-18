@@ -34,4 +34,20 @@ st.write("제로베이스원 리키와 함께하는 진로 탐색")
 mbti_jobs = {
     "INTJ": ["연구원", "전략 기획자", "데이터 과학자"],
     "ENFP": ["마케터", "강사", "콘텐츠 크리에이터"],
-    "ISTJ": ["공무원", "회]()
+    "ISTJ": ["공무원", "회계사", "엔지니어"],
+    "ESFP": ["배우", "이벤트 플래너", "영업 전문가"],
+    # 필요에 따라 추가
+}
+
+# MBTI 선택
+user_mbti = st.selectbox("당신의 MBTI를 선택하세요", options=mbti_jobs.keys())
+
+# 결과 출력
+if user_mbti:
+    st.subheader(f"✨ {user_mbti} 유형 추천 직업 ✨")
+    for job in mbti_jobs[user_mbti]:
+        st.markdown(f"""
+        <div class="job-card">
+            <b>{job}</b>
+        </div>
+        """, unsafe_allow_html=True)
