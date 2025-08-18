@@ -23,7 +23,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 리키 흑백 이미지 (Hero)
-st.image("https://i.imgur.com/dkN0r8b.jpeg", use_column_width=True)  # 리키 이미지 URL 예시
+st.image("https://i.imgur.com/dkN0r8b.jpeg", use_container_width=True)
+  # 리키 이미지 URL 예시
 
 # 제목
 st.title("💎 제로베이스원 리키와 함께하는 탄생석 찾기 ⚫⚪🍓🥤🐰💫")
