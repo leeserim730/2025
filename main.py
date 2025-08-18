@@ -26,4 +26,14 @@ stone, meaning = birthstones[month]
 st.markdown("---")
 st.markdown(
     f"""
-    ## 🎀 {month}월의 탄생석은...
+    ## 🎀 {month}월의 탄생석은...  
+    ### ✨ {stone} ✨  
+    #### 💡 의미: {meaning}
+    """
+)
+
+st.markdown("---")
+st.info("💖 탄생석은 고대부터 행운과 보호의 의미로 여겨졌어요. "
+        "귀여운 보석 친구들과 함께 나만의 행운을 찾아보세요! ✨🎀")
+
+st.markdown("💕 만든이: 탄생석 요정 🧚‍♀️")
