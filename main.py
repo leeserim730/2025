@@ -37,10 +37,3 @@ st.info("💖 탄생석은 고대부터 행운과 보호의 의미로 여겨졌�
         "귀여운 보석 친구들과 함께 나만의 행운을 찾아보세요! ✨🎀")
 
 st.markdown("💕 만든이: 탄생석 요정 🧚‍♀️")
-[theme]
-base="light"
-primaryColor="#FF69B4"         # 핫핑크
-backgroundColor="#FFF0F5"      # 라벤더 블러쉬
-secondaryBackgroundColor="#FFD1DC"  # 연핑크
-textColor="#4B0082"            # 인디고
-font="sans serif"
