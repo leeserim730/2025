@@ -1,35 +1,5 @@
 import streamlit as st
-
-# 페이지 설정
-st.set_page_config(page_title="탄생석 알아보기", layout="centered")
-
-# CSS 커스터마이징 (세련된 흑백 스타일)
-st.markdown("""
-    <style>
-    body {
-        background-color: black;
-        color: white;
-        font-family: 'Helvetica Neue', sans-serif;
-    }
-    .stone-card {
-        background-color: #1a1a1a;
-        padding: 20px;
-        border-radius: 16px;
-        margin: 20px 0;
-        text-align: center;
-        box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# 리키 흑백 이미지 (Hero)
-st.image("https://i.imgur.com/dkN0r8b.jpeg", use_container_width=True)
-  # 리키 이미지 URL 예시
-
-# 제목
-st.title("💎 제로베이스원 리키와 함께하는 탄생석 찾기 ⚫⚪🍓🥤🐰💫")
-
-st.write("세련된 흑백 감성으로, 당신의 탄생석과 의미를 알아보세요.")
+from datetime import datetime
 
 # 탄생석 데이터
 birthstones = {
@@ -47,18 +17,19 @@ birthstones = {
     12: {"name": "터키석 (Turquoise)", "meaning": "성공, 승리, 행복", "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Turquoise-Persia.jpg"},
 }
 
-# 사용자 입력
-month = st.selectbox("출생 월을 선택하세요 🍓🐰", range(1, 13), format_func=lambda x: f"{x}월")
+# 페이지 설정
+st.set_page_config(page_title="탄생석 알아보기", layout="centered")
+
+# 제목
+st.title("💎 나의 탄생석을 알아보자!")
+st.write("생일이나 월을 입력하면, 당신의 탄생석과 의미를 알려드립니다.")
+
+# 입력 (달 선택)
+month = st.selectbox("당신의 출생 월을 선택하세요", range(1, 13), format_func=lambda x: f"{x}월")
 
 # 결과 출력
 if month:
     stone = birthstones[month]
-    st.markdown(f"""
-    <div class="stone-card">
-        <h2>✨ {month}월의 탄생석: {stone['name']} ✨</h2>
-        <img src="{stone['image']}" width="300">
-        <p><b>의미:</b> {stone['meaning']}</p>
-        <p>⚫⚪ 딸기라떼도 한 잔 곁들이면서 🍓🥤, 리니니와 함께 🐰💫</p>
-    </div>
-    """, unsafe_allow_html=True)
-
+    st.subheader(f"✨ {month}월의 탄생석은 **{stone['name']}** 입니다 ✨")
+    st.image(stone["image"], caption=stone["name"], use_column_width=True)
+    st.markdown(f"**의미:** {stone['meaning']}")
