@@ -1,12 +1,27 @@
-import streamlit as st
+import streamlit as st    #st라는 별칭 붙여서 st.~의 형태로 쉽게 사용
 
+
+#웹앱 탭에 표시될 제목과 아이콘 설정 / config : configuration (구성,설정)의 줄임말, 
 st.set_page_config(page_title="교사-학생 주제 추천", page_icon="🎓", layout="centered")
 
-st.title("🎓 교사-학생 주제 추천 웹앱")
+#set_page_config : 앱의 초기 화면 설정 (config)을 바꾸는 함수 -> 원래 기본값으로 설정되기 때문
+#page_title = ~  : 제목
+#page_icon = ~   : 아이콘, 이모지 가능
+#layout = "centered" : 화면 배치 (중앙 정)
+
+
+st.title("🎓 교사-학생 주제 추천 웹앱")  #앱 상단에 제목을 출력
+
 
 # 사용자 유형 선택
 user_type = st.radio("👥 사용자 유형을 선택하세요", ["👩‍🏫 교사", "👩‍🎓 학생"])
 
+#st.radio() : 여러 옵션 중 하나만 선택할 수 있는 버튼
+#(버튼의 질문 요구, 선택지목록)
+#선택한 값이 user_type 변수에 저장됨
+
+
+#사용자가 교사 선택
 if user_type == "👩‍🏫 교사":
     st.markdown("## 👩‍🏫 교사용 입력")
     subject = st.text_input("📚 과목/주제 입력 (예: 국어, 수학, 환경)")
