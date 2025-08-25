@@ -2,7 +2,7 @@ import streamlit as st    #st라는 별칭 붙여서 st.~의 형태로 쉽게 �
 
 
 #웹앱 탭에 표시될 제목과 아이콘 설정 / config : configuration (구성,설정)의 줄임말, 
-st.set_page_config(page_title="교사-학생 주제 추천", page_icon="🎓", layout="centered")
+st.set_page_config(page_title="주제씨앗", page_icon="🎓", layout="centered")
 
 #set_page_config : 앱의 초기 화면 설정 (config)을 바꾸는 함수 -> 원래 기본값으로 설정되기 때문
 #page_title = ~  : 제목
